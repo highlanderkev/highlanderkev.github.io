@@ -23,7 +23,22 @@
     }
   ],
   "hosting": {
-    "source": "./dist/higlanderkev.github.io"
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**/*.@(css|js)",
+        "destination": "/index.html"
+      },
+      {
+        "source": "**",
+        "function": "ssr"
+      }
+    ]
   },
   "storage": {
     "rules": "storage.rules"

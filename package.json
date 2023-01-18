@@ -5,14 +5,18 @@
     "ng": "ng",
     "start": "ng serve --extra-webpack-config ./webpack/custom-webpack.config.js -o",
     "build": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js",
-    "watch": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js --watch --configuration development",
+    "build:prod": "npm run build -- --configuration production",
+    "build:dev:watch": "npm run build -- --watch --configuration development",
     "test": "ng test --extra-webpack-config ./webpack/custom-webpack.config.js",
     "dev:ssr": "ng run higlanderkev.github.io:serve-ssr",
     "serve:ssr": "node dist/higlanderkev.github.io/server/main.js",
-    "build:ssr": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js -o && ng run higlanderkev.github.io:server",
+    "build:ssr": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js && ng run higlanderkev.github.io:server",
     "prerender": "ng run higlanderkev.github.io:prerender"
   },
   "private": true,
+  "engines": {
+    "node": "16"
+  },
   "dependencies": {
     "@angular/animations": "^15.1.0",
     "@angular/cdk": "^15.1.0",
