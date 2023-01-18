@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --extra-webpack-config ./webpack/custom-webpack.config.js -o",
-    "build": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js -o",
-    "watch": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js -o --watch --configuration development",
+    "build": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js",
+    "watch": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js --watch --configuration development",
     "test": "ng test --extra-webpack-config ./webpack/custom-webpack.config.js",
     "dev:ssr": "ng run higlanderkev.github.io:serve-ssr",
     "serve:ssr": "node dist/higlanderkev.github.io/server/main.js",
