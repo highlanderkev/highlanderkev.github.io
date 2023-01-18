@@ -37,6 +37,7 @@
       "dom",
       "esnext.asynciterable"
     ],
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
   },
   "angularCompilerOptions": {
