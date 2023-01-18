@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  padding: 10px;
+  &.profile-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .profile-pic {
+      img {
+        width: 75px;
+        height: 75px;
+        border: 0;
+        border-radius: 50%;
+      }
+    }
+    .profile-name-title {
+      text-align: center;
+      line-height: 2px;
+      h3 {
+        font-weight: 400;
+      }
+      h5 {
+        font-weight: 300;
+        margin: 0;
+      }
+    }
+  }
+}

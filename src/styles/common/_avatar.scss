@@ -1,0 +1,37 @@
+.icon-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+
+  i {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      font-size: 40px;
+      line-height: 40px;
+      color: $light-primary-text;
+  }
+
+  &.color-green i {
+      background-color: mat-color(mat.$green, A400);
+  }
+
+  &.color-pink i {
+      background-color: mat-color(mat.$pink, A200);
+  }
+
+  &.color-blue i {
+      background-color: mat-color(mat.$light-blue, A400);
+  }
+
+  &.color-orange i {
+      background-color: mat-color(mat.$amber, A400);
+  }
+
+  &.color-purple i {
+      background-color: mat-color(mat.$purple, A700);
+  }
+}

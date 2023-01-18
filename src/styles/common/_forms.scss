@@ -1,0 +1,43 @@
+@import './variables';
+
+.mat-form-field {
+    width: 100%;
+}
+.half-form-field {
+    width: 50%;
+}
+.three-quarter-form-field {
+    width: 75%;
+}
+.quarter-form-field {
+    width: 25%;
+}
+.mat-radio-button {
+    margin: 0 5px 5px 0;
+}
+fieldset.license-info {
+    margin: 1em -.5em;
+    border-color: mat-color(mat.$deep-purple, 700);
+    border-radius: 8px;
+}
+
+.home-search-input .mat-form-field-wrapper,
+.search-and-filter .mat-form-field-wrapper,
+[appearance=outline] .mat-form-field-wrapper {
+    color: $dark-primary-text;
+    padding-bottom: 0;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-prefix,
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: auto !important;
+}
+
+.error-message {
+    color: mat-color(mat.$red, 700);
+
+    i {
+        position: relative;
+        top: 5px;
+    }
+}

@@ -1,0 +1,39 @@
+.section-resume {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.pdf-viewer {
+  display: block;
+  min-height: 500px;
+  min-width: 280px;
+}
+
+@media (min-width: 1440px) {
+  .pdf-viewer {
+    width: 1400px;
+    height: 1000px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pdf-viewer {
+    width: 980px;
+    height: 1000px;
+  }
+}
+
+// iPad Mini
+@media only screen and (min-width: 768px) {
+  .pdf-viewer {
+    width: 700px;
+    height: 820px;
+  }
+}
+
+@media (max-device-width: 480px) {
+  .mat-mdc-card {
+    width: 300px;
+  }
+}
