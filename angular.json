@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "higlanderkev.github.io": {
+    "app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/higlanderkev.github.io/browser",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -82,10 +82,10 @@
           "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "higlanderkev.github.io:build:production"
+              "browserTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "higlanderkev.github.io:build:development"
+              "browserTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "ngx-build-plus:extract-i18n",
           "options": {
-            "browserTarget": "higlanderkev.github.io:build"
+            "browserTarget": "app:build"
           }
         },
         "test": {
@@ -115,13 +115,48 @@
             "scripts": []
           }
         },
-        "server": {
+        "server-old": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/higlanderkev.github.io/server",
             "main": "server.ts",
+            "outputPath": "dist/server",
+            "resourcesOutputPath": "dist/server",
             "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "scss",
+            "externalDependencies": ["canvas"],
+            "verbose": true
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./webpack/custom-webpack.config.js",
+              "mergeRules": {
+                "module": {
+                  "rules": "prepend"
+                }
+              }
+            },
+            "main": "server.ts",
+            "outputPath": "dist/server",
+            "resourcesOutputPath": "dist/server",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss",
+            "externalDependencies": ["canvas"],
+            "verbose": true
           },
           "configurations": {
             "production": {
@@ -140,12 +175,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "higlanderkev.github.io:build:development",
-              "serverTarget": "higlanderkev.github.io:server:development"
+              "browserTarget": "app:build:development",
+              "serverTarget": "app:server:development"
             },
             "production": {
-              "browserTarget": "higlanderkev.github.io:build:production",
-              "serverTarget": "higlanderkev.github.io:server:production"
+              "browserTarget": "app:build:production",
+              "serverTarget": "app:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -159,12 +194,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "higlanderkev.github.io:build:production",
-              "serverTarget": "higlanderkev.github.io:server:production"
+              "browserTarget": "app:build:production",
+              "serverTarget": "app:server:production"
             },
             "development": {
-              "browserTarget": "higlanderkev.github.io:build:development",
-              "serverTarget": "higlanderkev.github.io:server:development"
+              "browserTarget": "app:build:development",
+              "serverTarget": "app:server:development"
             }
           },
           "defaultConfiguration": "production"

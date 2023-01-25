@@ -3,11 +3,11 @@
 .env
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-/public
+**/dist**
+**/tmp**
+**/out-tsc**
+**/bazel-out**
+**/public**
 
 # Node
 /node_modules

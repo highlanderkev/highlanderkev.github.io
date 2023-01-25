@@ -26,6 +26,7 @@
   ],
   "rules": {
     "no-unused-vars": "warn",
+    "max-len": "off",
     "require-jsdoc": 0,
     "import/no-unresolved": 0
   }

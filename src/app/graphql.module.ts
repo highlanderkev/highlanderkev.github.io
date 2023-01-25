@@ -3,6 +3,7 @@ import {Apollo, ApolloModule} from 'apollo-angular';
 import {createHttpLink, InMemoryCache} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
+import fetch from 'cross-fetch';
 
 import { environment } from '@environments/environment';
 
@@ -20,6 +21,7 @@ export class GraphQLModule {
     apollo.create({
       link: this.apolloLink,
       cache: this.apolloCache,
+      ssrMode: true,
     });
   }
 
@@ -33,7 +35,8 @@ export class GraphQLModule {
 
   private get httpLink() {
     return createHttpLink({
-      uri: environment.github.api.graphURL
+      uri: environment.github.api.graphURL,
+      fetch
     });
   }
 

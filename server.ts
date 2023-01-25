@@ -5,14 +5,20 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
+import { createWindow } from 'domino';
 
 import { AppServerModule } from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/higlanderkev.github.io/browser');
+  const distFolder = join(process.cwd(), 'dist/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+
+  const window: Window & typeof globalThis = createWindow(indexHtml) as Window & typeof globalThis;
+  window.requestAnimationFrame = (cb) => { return 0; };
+  global['window'] = window;
+  global['document'] = window.document;
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({

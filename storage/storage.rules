@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+ match /b/highlanderkev-github-io.appspot.com/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+    match /resume.pdf {
+    	allow read, write;
+    }
+  }
+}

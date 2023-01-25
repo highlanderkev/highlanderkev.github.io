@@ -1,10 +1,10 @@
 {
   "database": {
-    "rules": "database.rules.json"
+    "rules": "database/database.rules.json"
   },
   "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "rules": "firestore/firestore.rules",
+    "indexes": "firestore/firestore.indexes.json"
   },
   "functions": [
     {
@@ -41,7 +41,7 @@
     ]
   },
   "storage": {
-    "rules": "storage.rules"
+    "rules": "storage/storage.rules"
   },
   "emulators": {
     "functions": {
@@ -62,6 +62,6 @@
     "singleProjectMode": true
   },
   "remoteconfig": {
-    "template": "remoteconfig.template.json"
+    "template": "remoteconfig/remoteconfig.template.json"
   }
 }

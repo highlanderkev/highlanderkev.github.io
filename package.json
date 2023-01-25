@@ -1,19 +1,24 @@
 {
   "name": "higlanderkev.github.io",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --extra-webpack-config ./webpack/custom-webpack.config.js -o",
+    "start": "npm run dev",
+    "dev": "ng serve --extra-webpack-config ./webpack/custom-webpack.config.js -o",
+    "dev:ssr": "ng run app:serve-ssr",
     "build": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js",
     "build:prod": "npm run build -- --configuration production",
+    "build:dev": "npm run build -- --configuration development",
     "build:dev:watch": "npm run build -- --watch --configuration development",
+    "build:ssr": "npm run build && ng run app:server",
+    "build:ssr:server:dev": "ng run app:server:development",
+    "build:ssr:server:prod": "ng run app:server:production",
     "test": "ng test --extra-webpack-config ./webpack/custom-webpack.config.js",
-    "dev:ssr": "ng run higlanderkev.github.io:serve-ssr",
-    "serve:ssr": "node dist/higlanderkev.github.io/server/main.js",
-    "build:ssr": "ng build --extra-webpack-config ./webpack/custom-webpack.config.js && ng run higlanderkev.github.io:server",
-    "prerender": "ng run higlanderkev.github.io:prerender"
+    "serve:ssr": "node dist/server/main.js",
+    "ssr:build:development": "npm run build:dev && npm run ",
+    "prerender": "ng run app:prerender"
   },
-  "private": true,
   "engines": {
     "node": "16"
   },
@@ -40,11 +45,14 @@
     "@sentry/browser": "^7.30.0",
     "@sentry/tracing": "^7.30.0",
     "apollo-angular": "^4.2.0",
+    "cross-fetch": "^3.1.5",
+    "domino": "^2.1.6",
     "express": "^4.15.2",
     "firebase": "^9.15.0",
     "graphql": "^16",
     "ng2-pdf-viewer": "^8.0.1",
     "ngx-build-plus": "^15.0.0",
+    "pdfjs-dist": "^3.2.146",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

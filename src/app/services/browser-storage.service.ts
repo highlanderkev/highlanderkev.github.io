@@ -1,12 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { environment } from '@environments/environment';
 
+const noopStorage = {
+  getItem: (key: string): any => {},
+  setItem: (key: string, value: string) => {},
+  removeItem: (key: string) => {},
+}
+
 @Injectable()
 export class BrowserStorageService {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
 
   private get localStorage() {
-    return environment.production ? window.sessionStorage : window.localStorage;
+    if(isPlatformBrowser(this.platformId)) return environment.production ? window.sessionStorage : window.localStorage;
+    return noopStorage;
   }
 
   public getItem(key: string): any {

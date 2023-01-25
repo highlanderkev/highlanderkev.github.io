@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppRoutingModule } from './routing.module';
 import { GraphQLModule } from './graphql.module';
 import { AppMaterialModule } from './material.module';
@@ -59,7 +59,7 @@ import { environment } from '@environments/environment';
     HttpClientModule,
     AppMaterialModule,
     FirebaseModule,
-    PdfViewerModule,
+    // PdfViewerModule,
   ],
   providers: [
     ApiService,
