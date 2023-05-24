@@ -4,7 +4,12 @@ import * as cors from 'cors';
 import axios from 'axios';
 import {Response} from 'express';
 
-import {angularApp} from './angular-server';
+// import {angularApp} from './angular-server';
+import * as Koa from 'koa';
+import * as Router from '@koa/router';
+import * as staticFiles from 'koa-static';
+import {nodeResolve} from 'koa-node-resolve';
+import {Readable} from 'stream';
 
 admin.initializeApp({
   credential: admin.credential.applicationDefault(),
@@ -17,7 +22,23 @@ const corsOptions = {
 
 const corsHandler = cors(corsOptions);
 
-export const ssr = functions.https.onRequest(angularApp());
+const app = new Koa();
+const router = new Router();
+
+router.get('/', async (ctx) => {
+  ctx.type = 'text/html';
+  const ssr = await import('@lit-labs/ssr/lib/render-result-readable.js');
+  const litRender = await import('./lit-render');
+  ctx.body = new ssr.RenderResultReadable(litRender.renderIndex({name: 'Kevin'}));
+});
+
+app.use(router.routes());
+app.use(nodeResolve());
+app.use(staticFiles('.'));
+
+export const api = functions.https.onRequest(app.callback() as any);
+
+// export const ssr = functions.https.onRequest(angularApp());
 
 // export const helloWorld = functions.https.onRequest((request, response) => {
 //   functions.logger.info('Hello logs!', {structuredData: true});

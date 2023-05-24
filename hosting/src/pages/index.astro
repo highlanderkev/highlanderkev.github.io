@@ -1,0 +1,14 @@
+---
+import Default from '../layouts/Default.astro';
+import { AppRoot } from '../components/app-root';
+import Counter from '../components/Counter';
+---
+<Default title="Welcome">
+  <main>
+    <AppRoot header="Test" client:load />
+    <Counter client:load>Counter!!</Counter>
+  </main>
+</Default>
+<script>
+  console.log('import.meta.env', import.meta.env);
+</script>

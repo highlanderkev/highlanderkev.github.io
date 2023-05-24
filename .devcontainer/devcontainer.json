@@ -1,0 +1,5 @@
+{
+  "name": "Node & Typescript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "forwardPorts": [3000]
+}

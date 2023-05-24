@@ -1,22 +1,20 @@
 {
+  "extends": "./tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
       "@assets/*": [
         "assets/*"
       ],
-      "@app/*": [
-        "app/*"
-      ],
-      "@environments/*": [
-        "environments/*"
+      "@components/*": [
+        "components/*"
       ],
       "@styles/*": [
         "styles/*"
       ]
     },
-    "outDir": "./dist/out-tsc",
+    "outDir": "/dist/web",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -45,5 +43,11 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "__src-old/**"
+  ]
 }

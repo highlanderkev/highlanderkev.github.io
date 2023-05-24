@@ -27,7 +27,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }} & Install Dependencies
         run: |
           cd functions
-          npm ci:
+          npm ci
 
       - name: Run Lint
         run: |
