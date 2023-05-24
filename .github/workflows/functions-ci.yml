@@ -1,0 +1,35 @@
+name: Firebase Functions ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Use Node.js ${{ matrix.node-version }} & Install Dependencies
+        run: |
+          cd functions
+          npm ci:
+
+      - name: Run Lint
+        run: |
+          cd functions
+          npm run lint

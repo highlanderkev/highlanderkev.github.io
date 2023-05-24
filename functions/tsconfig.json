@@ -2,11 +2,30 @@
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "outDir": "lib",
+    "noUnusedLocals": false,
+    "outDir": "../dist/server",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@assets/*": [
+        "../src/assets/*"
+      ],
+      "@app/*": [
+        "../src/app/*"
+      ],
+      "@environments/*": [
+        "../src/environments/*"
+      ],
+      "@styles/*": [
+        "../src/styles/*"
+      ]
+    },
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
   },
   "compileOnSave": true,
   "include": [

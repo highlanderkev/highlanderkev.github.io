@@ -1,0 +1,42 @@
+@import 'common';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container--column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container--row {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  z-index: 2;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.main {
+  // margin-top: 70px;
+  justify-content: center;
+  min-height: 800px;
+}
+
+// .mdc-content {
+//   min-width: 100%;
+// }
