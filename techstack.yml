@@ -1,0 +1,592 @@
+repo_name: highlanderkev/highlanderkev.github.io
+report_id: 4794bfe5923e2d2e124b9b2909afa62a
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-31T17:12:33+00:00'
+requested_by: highlanderkev
+provider: github
+branch: main
+detected_tools_count: 43
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io
+  detection_source: Repo Metadata
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io
+  detection_source: Repo Metadata
+- name: Angular
+  description: A platform for building mobile and desktop web applications
+  website_url: https://angular.io
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Javascript MVC Frameworks
+  image_url: https://img.stackshare.io/service/3745/cb8U-gL6_400x400.jpg
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: ExpressJS
+  description: Sinatra inspired web development framework for node.js -- insanely
+    fast, flexible, and simple
+  website_url: http://expressjs.com/
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/1163/hashtag.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: Node.js
+  description: A platform built on Chrome's JavaScript runtime for easily building
+    fast, scalable network applications
+  website_url: http://nodejs.org/
+  version: 17.0.1
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/.nvmrc
+  detection_source: Repo Metadata
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: RxJS
+  description: The Reactive Extensions for JavaScript
+  website_url: http://reactivex.io/rxjs/
+  version: 6.6.7
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Concurrency Frameworks
+  image_url: https://img.stackshare.io/service/1796/984368.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: Firebase
+  description: The Realtime App Platform
+  website_url: https://firebase.google.com/
+  open_source: false
+  hosted_saas: true
+  category: Application Hosting
+  sub_category: Realtime Backend / API
+  image_url: https://img.stackshare.io/service/116/cZLxNFZS.jpg
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io
+  detection_source: Repo Metadata
+- name: GitHub Actions
+  description: Automate your workflow from idea to production
+  website_url: https://github.com/features/actions
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/.github/workflows/firebase-hosting-merge.yml
+  detection_source: ".github/workflows/firebase-hosting-merge.yml"
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: Jasmine
+  description: DOM-less simple JavaScript testing framework
+  website_url: http://jasmine.github.io/
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/831/7c0b595409af531b9cdeb07f8c513e8b.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: Karma
+  description: Spectacular Test Runner for JavaScript
+  website_url: http://karma-runner.github.io/
+  version: 6.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Browser Testing
+  image_url: https://img.stackshare.io/service/1420/TidYGd6a.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: Visual Studio Code
+  description: Build and debug modern web and cloud applications, by Microsoft
+  website_url: https://code.visualstudio.com/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Text Editor
+  image_url: https://img.stackshare.io/service/4202/Visual_Studio_Code_logo.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/.vscode/tasks.json
+  detection_source: ".vscode/tasks.json"
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: "@angular-devkit/build-angular"
+  description: Angular Webpack Build Facade
+  package_url: https://www.npmjs.com/@angular-devkit/build-angular
+  version: 15.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16162/default_77b54a203c743d16eddb6b6390cba17218454fa0.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/animations"
+  description: Angular - animations integration with web-animations
+  package_url: https://www.npmjs.com/@angular/animations
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16010/default_af9df0bc9fa88191d2fe609204c5bd7599c1a797.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/cdk"
+  description: Angular Material Component Development Kit
+  package_url: https://www.npmjs.com/@angular/cdk
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16358/default_22cf6cee54c697b5a223902962cc57a55ee80be9.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/cli"
+  description: CLI tool for Angular
+  package_url: https://www.npmjs.com/@angular/cli
+  version: 15.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16000/default_976847109ccfe67d00b33d9ff71329b6e82f5f89.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/common"
+  description: Angular - commonly needed directives and services
+  package_url: https://www.npmjs.com/@angular/common
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15913/default_ac622bc364a601d766b9a6f6039f191492f54d65.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/compiler"
+  description: Angular - the compiler library
+  package_url: https://www.npmjs.com/@angular/compiler
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15917/default_4040fefea2f98006727f63d042275b96a275ab2d.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/compiler-cli"
+  description: Angular - the compiler CLI for Node.js
+  package_url: https://www.npmjs.com/@angular/compiler-cli
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15927/default_e0a4fb1126d7400f419f0931cf1669947a5bc552.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/forms"
+  description: Angular - directives and services for creating forms
+  package_url: https://www.npmjs.com/@angular/forms
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15944/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/material"
+  description: Angular Material
+  package_url: https://www.npmjs.com/@angular/material
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16444/default_5ffcf8d02a3454bd25d27d236025c6d078c3b672.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/platform-browser"
+  description: Angular - library for using Angular in a web browser
+  package_url: https://www.npmjs.com/@angular/platform-browser
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15921/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/platform-browser-dynamic"
+  description: Angular - library for using Angular in a web browser with JIT compilation
+  package_url: https://www.npmjs.com/@angular/platform-browser-dynamic
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15933/default_b45165a5d30e541ab11711a34a78209b3e8ed7fd.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/platform-server"
+  description: Angular - library for using Angular in Node.js
+  package_url: https://www.npmjs.com/@angular/platform-server
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16296/default_f04d39fc656c2e32ee1b9d3875a3002459aa3b69.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@angular/router"
+  description: Angular - the routing library
+  package_url: https://www.npmjs.com/@angular/router
+  version: 15.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15965/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@types/express"
+  description: TypeScript definitions for Express
+  package_url: https://www.npmjs.com/@types/express
+  version: 4.17.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16100/default_d947c1690e032a288145c7e2491999eab3ea8ede.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@types/jasmine"
+  description: TypeScript definitions for Jasmine
+  package_url: https://www.npmjs.com/@types/jasmine
+  version: 4.3.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15924/default_ac622bc364a601d766b9a6f6039f191492f54d65.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@types/node"
+  description: TypeScript definitions for Node.js
+  package_url: https://www.npmjs.com/@types/node
+  version: 18.11.18
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@typescript-eslint/eslint-plugin"
+  description: TypeScript plugin for ESLint
+  package_url: https://www.npmjs.com/@typescript-eslint/eslint-plugin
+  version: 5.48.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15982/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: "@typescript-eslint/parser"
+  description: An ESLint custom parser which leverages TypeScript ESTree
+  package_url: https://www.npmjs.com/@typescript-eslint/parser
+  version: 5.48.1
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15980/default_732016a20524708efe7a4c77497fe9bfeea19ba6.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: eslint-config-google
+  description: ESLint shareable config for the Google style
+  package_url: https://www.npmjs.com/eslint-config-google
+  version: 0.14.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16249/default_380ae3d73e22c7ca1f42b96479bcd0095dabc0d3.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: eslint-plugin-import
+  description: Import with sanity
+  package_url: https://www.npmjs.com/eslint-plugin-import
+  version: 2.27.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15806/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: express
+  description: Fast, unopinionated, minimalist web framework
+  package_url: https://www.npmjs.com/express
+  version: 4.18.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15818/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: firebase-admin
+  description: Firebase admin SDK for Node.js
+  package_url: https://www.npmjs.com/firebase-admin
+  version: 10.3.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17151/default_21a9522c66101ebad0e63609af74acb35fe29a0a.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: functions/package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 19:04:38.000000000 Z
+- name: jasmine-core
+  description: Official packaging of Jasmine's core files for use by Node.js projects
+  package_url: https://www.npmjs.com/jasmine-core
+  version: 4.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15905/default_3af1504b6f77c55205ba630fe08c472f43b95f6e.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: karma-chrome-launcher
+  description: A Karma plugin. Launcher for Chrome and Chrome Canary
+  package_url: https://www.npmjs.com/karma-chrome-launcher
+  version: 3.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15860/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: karma-coverage
+  description: A Karma plugin. Generate code coverage
+  package_url: https://www.npmjs.com/karma-coverage
+  version: 2.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15951/default_b45165a5d30e541ab11711a34a78209b3e8ed7fd.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: karma-jasmine
+  description: A Karma plugin - adapter for Jasmine testing framework
+  package_url: https://www.npmjs.com/karma-jasmine
+  version: 5.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15886/default_7c39a83d4acd952df89b1ebfdb94c8646324fbf1.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: karma-jasmine-html-reporter
+  description: A Karma plugin
+  package_url: https://www.npmjs.com/karma-jasmine-html-reporter
+  version: 2.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15999/default_7a465bc85b23fd837cbc038fd1d504632c41a884.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: tslib
+  description: Runtime library for TypeScript helper functions
+  package_url: https://www.npmjs.com/tslib
+  version: 2.4.1
+  license: 0BSD
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15853/default_97d4687bd07ff1bb963fd566c84e7cbf7c73bbee.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/functions/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
+- name: zone.js
+  description: Zones for JavaScript
+  package_url: https://www.npmjs.com/zone.js
+  version: 0.12.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15915/default_59a1b5716eefa3750c20936c3d53ff13a6390ee1.png
+  detection_source_url: https://github.com/highlanderkev/highlanderkev.github.io/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Kevin Westropp
+  last_updated_on: 2023-01-14 18:09:22.000000000 Z
