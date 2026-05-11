@@ -32,6 +32,15 @@ _paths_output=$(get_feature_paths) || { echo "ERROR: Failed to resolve feature p
 eval "$_paths_output"
 unset _paths_output
 
+# In JSON mode, send informational messages to stderr so stdout remains valid JSON
+log_info() {
+    if $JSON_MODE; then
+        echo "$1" >&2
+    else
+        echo "$1"
+    fi
+}
+
 # If feature.json pins an existing feature directory, branch naming is not required.
 if ! feature_json_matches_feature_dir "$REPO_ROOT" "$FEATURE_DIR"; then
     check_feature_branch "$CURRENT_BRANCH" "$HAS_GIT" || exit 1
@@ -44,9 +53,9 @@ mkdir -p "$FEATURE_DIR"
 TEMPLATE=$(resolve_template "plan-template" "$REPO_ROOT") || true
 if [[ -n "$TEMPLATE" ]] && [[ -f "$TEMPLATE" ]]; then
     cp "$TEMPLATE" "$IMPL_PLAN"
-    echo "Copied plan template to $IMPL_PLAN"
+    log_info "Copied plan template to $IMPL_PLAN"
 else
-    echo "Warning: Plan template not found"
+    log_info "Warning: Plan template not found"
     # Create a basic plan file if template doesn't exist
     touch "$IMPL_PLAN"
 fi
