@@ -11,7 +11,7 @@ url: "https://highlanderkev.github.io" # Replace with your actual domain if diff
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-seo-scripts
+  - jekyll-seo-tag
 
 # Theme settings (assuming a modern theme like 'minima' or similar)
 theme: minima
