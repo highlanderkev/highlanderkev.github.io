@@ -1,0 +1,23 @@
+---
+# Jekyll Configuration File
+# This file configures the entire Jekyll site.
+# It should be placed at the root of the repository.
+---
+# Site settings
+title: Kevin Patrick Westropp
+email: kevin@example.com
+description: A portfolio showcasing my work as a developer.
+baseurl: "" # The base URL for the site
+url: "https://highlanderkev.github.io" # Replace with your actual domain if different
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-scripts
+
+# Theme settings (assuming a modern theme like 'minima' or similar)
+theme: minima
+
+# Collections and Data
+# Define custom data files here if needed, e.g., projects: ./_data/projects.yml
+# For now, we will rely on manual markdown linking.
