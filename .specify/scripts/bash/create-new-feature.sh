@@ -47,6 +47,11 @@ while [ $i -le $# ]; do
                 echo 'Error: --number requires a value' >&2
                 exit 1
             fi
+            # Validate that the number is a non-negative integer
+            if ! [[ "$next_arg" =~ ^[0-9]+$ ]]; then
+                echo "Error: --number must be a non-negative integer, got: $next_arg" >&2
+                exit 1
+            fi
             BRANCH_NUMBER="$next_arg"
             ;;
         --timestamp)
