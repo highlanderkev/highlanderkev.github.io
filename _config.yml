@@ -1,21 +1,20 @@
-# Jekyll Configuration File
-# This file configures the entire Jekyll site.
-# It should be placed at the root of the repository.
-# Site settings
+# Jekyll Configuration
 title: Kevin Patrick Westropp
-email: kevin@example.com
-description: A portfolio showcasing my work as a developer.
-baseurl: "" # The base URL for the site
-url: "https://highlanderkev.github.io" # Replace with your actual domain if different
+description: Senior Fullstack Engineer — React, Node.js, TypeScript, AWS
+url: "https://highlanderkev.github.io"
+baseurl: ""
 
-# Build settings
+# Disable the minima theme so index.html is served as-is
+# theme: minima  <-- commented out intentionally
+
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-feed
 
-# Theme settings (assuming a modern theme like 'minima' or similar)
-theme: minima
-
-# Collections and Data
-# Define custom data files here if needed, e.g., projects: ./_data/projects.yml
-# For now, we will rely on manual markdown linking.
+# Exclude files from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
