@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kevin Patrick Westropp — Senior Fullstack Engineer</title>
+  <meta name="description" content="Senior Fullstack Engineer. React, Node.js, TypeScript, AWS. Based in Denver, CO."/>
+  <meta property="og:title" content="Kevin Patrick Westropp"/>
+  <meta property="og:description" content="Senior Fullstack Engineer — React, Node.js, TypeScript, AWS"/>
+  <meta property="og:image" content="https://highlanderkev.github.io/og-card.png"/>
+  <meta property="og:url" content="https://highlanderkev.github.io"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0d1117;
+      --bg2:      #161b22;
+      --bg3:      #21262d;
+      --border:   #30363d;
+      --border2:  #21262d;
+      --text:     #e6edf3;
+      --muted:    #8b949e;
+      --dim:      #6e7681;
+      --green:    #3fb950;
+      --green2:   #238636;
+      --blue:     #58a6ff;
+      --blue2:    #388bfd;
+      --purple:   #a371f7;
+      --amber:    #d29922;
+      --red:      #f85149;
+      --mono:     'JetBrains Mono', monospace;
+      --display:  'Syne', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ---- GRID BACKGROUND ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--bg2) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg2) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ---- LAYOUT ---- */
+    main { position: relative; z-index: 1; }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    /* ---- HERO ---- */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 7rem;
+    }
+
+    .hero-inner {
+      width: 100%;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--green);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--green2);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-name {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      animation: fadeUp 0.6s 0.1s ease both;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name .accent { color: var(--blue); }
+
+    .hero-sub {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+      max-width: 560px;
+    }
+
+    .hero-sub .hl { color: var(--text); }
+
+    .hero-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.65rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .tag.blue  { border-color: var(--blue2);  color: var(--blue); }
+    .tag.green { border-color: var(--green2); color: var(--green); }
+    .tag.purple{ border-color: #6e40c9;       color: var(--purple); }
+    .tag.amber { border-color: #9e6a03;       color: var(--amber); }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      padding: 0.65rem 1.25rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--green2);
+      color: #fff;
+      border: 1px solid var(--green);
+    }
+    .btn-primary:hover { background: var(--green); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--text); color: var(--text); }
+
+    /* ---- SECTION HEADERS ---- */
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-num {
+      font-size: 0.7rem;
+      color: var(--green);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border2);
+    }
+
+    /* ---- ABOUT ---- */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-text p .hl { color: var(--text); }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border2);
+      border: 1px solid var(--border2);
+    }
+
+    .stat-box {
+      background: var(--bg2);
+      padding: 1.5rem;
+    }
+
+    .stat-val {
+      font-family: var(--display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-val span { color: var(--green); }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ---- PROJECTS ---- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border2);
+      border: 1px solid var(--border2);
+    }
+
+    .project-card {
+      background: var(--bg2);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-card:hover { background: var(--bg3); }
+
+    .project-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-icon {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      font-size: 1rem;
+    }
+
+    .project-arrow {
+      font-size: 0.9rem;
+      color: var(--dim);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover .project-arrow {
+      color: var(--blue);
+      transform: translate(3px, -3px);
+    }
+
+    .project-name {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .lang-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .project-lang {
+      font-size: 0.7rem;
+      color: var(--dim);
+    }
+
+    /* ---- SKILLS ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border2);
+      border: 1px solid var(--border2);
+    }
+
+    .skill-group {
+      background: var(--bg2);
+      padding: 1.5rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.7rem;
+      color: var(--green);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-group-title::before {
+      content: '//';
+      color: var(--dim);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    /* ---- EXPERIENCE ---- */
+    .exp-list { display: flex; flex-direction: column; gap: 1px; background: var(--border2); border: 1px solid var(--border2); }
+
+    .exp-item {
+      background: var(--bg2);
+      padding: 1.5rem 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem 1rem;
+      align-items: start;
+      transition: background 0.2s;
+    }
+
+    .exp-item:hover { background: var(--bg3); }
+
+    .exp-role {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      grid-column: 1;
+    }
+
+    .exp-company {
+      font-size: 0.8rem;
+      color: var(--blue);
+      grid-column: 1;
+    }
+
+    .exp-date {
+      font-size: 0.7rem;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+      grid-column: 2;
+      grid-row: 1 / 3;
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    /* ---- CONTACT ---- */
+    #contact .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-text h3 {
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .contact-text p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border2);
+      border: 1px solid var(--border2);
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--bg2);
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover { background: var(--bg3); color: var(--text); }
+
+    .contact-link-label { display: flex; align-items: center; gap: 0.75rem; }
+    .contact-link-label span:first-child { color: var(--dim); font-size: 0.7rem; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border2);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--dim);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ---- TERMINAL CURSOR ---- */
+    .cursor::after {
+      content: '_';
+      animation: blink 1s step-start infinite;
+      color: var(--green);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- DIVIDER ---- */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border2);
+      margin: 0;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      #contact .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { grid-row: auto; grid-column: 1; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#"><span>&#x7B;</span> kpw <span>&#x7D;</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">available for new opportunities</div>
+      <h1 class="hero-name">Kevin<br><span class="accent">Patrick</span><br>Westropp</h1>
+      <p class="hero-sub">
+        <span class="hl">Senior Fullstack Engineer</span> with 8+ years building
+        cloud-native web applications. Based in <span class="hl">Denver, CO</span>.
+        M.S. Computer Science, DePaul University.
+      </p>
+      <div class="hero-stack">
+        <span class="tag blue">React</span>
+        <span class="tag blue">Node.js</span>
+        <span class="tag blue">TypeScript</span>
+        <span class="tag amber">AWS</span>
+        <span class="tag green">Python</span>
+        <span class="tag purple">AI/ML</span>
+        <span class="tag">GraphQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">view projects →</a>
+        <a class="btn btn-ghost" href="https://kevinwestropp.cv" target="_blank" rel="noopener">resume ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/highlanderkev" target="_blank" rel="noopener">github ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">about<span style="color:var(--green)">.</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a <span class="hl">Senior Fullstack Software Engineer</span> passionate about building
+        robust, scalable software — from cloud-native backend systems to polished
+        frontend experiences.</p>
+        <p>My work spans a range of domains including <span class="hl">financial services, e-commerce,
+        security, and data analytics</span>. I've led engineering teams, mentored developers,
+        and shipped production systems at scale across companies like CoBank, Tipico,
+        TransUnion, and Accenture.</p>
+        <p>Outside of engineering I'm deep into <span class="hl">AI/ML research</span>, quantitative
+        trading strategies, and game development with Godot and Unreal Engine.</p>
+        <p style="margin-top:1.5rem;">
+          <span style="color:var(--dim)">$ </span>
+          <span style="color:var(--green)">cat</span>
+          <span style="color:var(--text)"> location.txt </span>
+          <span style="color:var(--muted)">→ Denver, CO (RiNo)</span>
+          <span class="cursor"></span>
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-val">8<span>+</span></div>
+          <div class="stat-label">years experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">86</div>
+          <div class="stat-label">github repos</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">10<span>+</span></div>
+          <div class="stat-label">certifications</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">M<span>.S.</span></div>
+          <div class="stat-label">CS, DePaul Univ.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">projects<span style="color:var(--green)">.</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <a class="project-card" href="https://github.com/highlanderkev/investing-agents" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon">📈</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name">investing-agents</div>
+        <div class="project-desc">A2A (Agent-to-Agent) server for investment strategy. Explores multi-agent workflows for financial analysis and decision support.</div>
+        <div class="project-footer">
+          <span class="lang-dot" style="background:#3572A5"></span>
+          <span class="project-lang">Python</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/highlanderkev/KeySafe" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon">🔑</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name">KeySafe</div>
+        <div class="project-desc">Next.js app for managing API keys in a password-manager style interface. Secure key storage with a clean developer-focused UI.</div>
+        <div class="project-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="project-lang">TypeScript</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/highlanderkev/obsidian-claude-connector" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon">🧠</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name">obsidian-claude-connector</div>
+        <div class="project-desc">Unofficial MCP extension connecting Claude AI to a local Obsidian vault. Enables LLM-powered knowledge base queries and note generation.</div>
+        <div class="project-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="project-lang">TypeScript</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/highlanderkev/ai-explorer" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon">🤖</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name">ai-explorer</div>
+        <div class="project-desc">Interactive AI exploration and experimentation tool. Built to prototype and test various ML models and generative AI integrations.</div>
+        <div class="project-footer">
+          <span class="lang-dot" style="background:#00B4AB"></span>
+          <span class="project-lang">Dart</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/highlanderkev/covid-map" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon">🗺️</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name">covid-map</div>
+        <div class="project-desc">Interactive data visualization mapping COVID-19 spread and statistics. Built with JavaScript and D3-style geographic rendering.</div>
+        <div class="project-footer">
+          <span class="lang-dot" style="background:#f1e05a"></span>
+          <span class="project-lang">JavaScript</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/highlanderkev?tab=repositories" target="_blank" rel="noopener">
+        <div class="project-card-top">
+          <div class="project-icon" style="color:var(--dim)">+</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div class="project-name" style="color:var(--muted)">view all 86 repos</div>
+        <div class="project-desc">Explore the full collection on GitHub — spanning web apps, ML experiments, trading tools, game prototypes, and more.</div>
+        <div class="project-footer">
+          <span class="project-lang" style="color:var(--blue)">github.com/highlanderkev</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">skills<span style="color:var(--green)">.</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Frontend</div>
+        <div class="skill-list">
+          <span class="tag blue">React</span>
+          <span class="tag blue">TypeScript</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Vue</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Tailwind</span>
+          <span class="tag">GraphQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Backend</div>
+        <div class="skill-list">
+          <span class="tag blue">Node.js</span>
+          <span class="tag green">Python</span>
+          <span class="tag">Express</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud / DevOps</div>
+        <div class="skill-list">
+          <span class="tag amber">AWS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AI / ML</div>
+        <div class="skill-list">
+          <span class="tag purple">LLM Integration</span>
+          <span class="tag purple">RAG</span>
+          <span class="tag green">TensorFlow</span>
+          <span class="tag">Vector DBs</span>
+          <span class="tag">MCP</span>
+          <span class="tag">Agentic AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">experience<span style="color:var(--green)">.</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-role">Senior Fullstack Engineer</div>
+        <div class="exp-company">CoBank</div>
+        <div class="exp-date">2022 — present</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-company">Tipico</div>
+        <div class="exp-date">2021 — 2022</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-company">Brinks Home Security</div>
+        <div class="exp-date">2020 — 2021</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-company">TransUnion</div>
+        <div class="exp-date">2019 — 2020</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-company">Accenture</div>
+        <div class="exp-date">2017 — 2019</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-company">Egencia (Expedia Group)</div>
+        <div class="exp-date">2016 — 2017</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">contact<span style="color:var(--green)">.</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h3>Let's build<br>something<span style="color:var(--green)">.</span></h3>
+        <p>Open to senior engineering roles, contract work, and collaborations —
+        especially in AI-forward product companies, fintech, and developer tooling.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:highlanderkev@proton.me">
+          <span class="contact-link-label">
+            <span>email</span>
+            <span>highlanderkev@proton.me</span>
+          </span>
+          <span>↗</span>
+        </a>
+        <a class="contact-link" href="https://github.com/highlanderkev" target="_blank" rel="noopener">
+          <span class="contact-link-label">
+            <span>github</span>
+            <span>@highlanderkev</span>
+          </span>
+          <span>↗</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/kevinwestropp" target="_blank" rel="noopener">
+          <span class="contact-link-label">
+            <span>linkedin</span>
+            <span>in/kevinwestropp</span>
+          </span>
+          <span>↗</span>
+        </a>
+        <a class="contact-link" href="https://kevinwestropp.cv" target="_blank" rel="noopener">
+          <span class="contact-link-label">
+            <span>resume</span>
+            <span>kevinwestropp.cv</span>
+          </span>
+          <span>↗</span>
+        </a>
+        <a class="contact-link" href="https://highlanderkev.dev" target="_blank" rel="noopener">
+          <span class="contact-link-label">
+            <span>portfolio</span>
+            <span>highlanderkev.dev</span>
+          </span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Kevin Patrick Westropp</span>
+  <span style="color:var(--green)">highlanderkev.github.io</span>
+</footer>
+
+</body>
+</html>
